@@ -110,8 +110,6 @@ loaded = False
 test_mode = False
 robinhood_auth = False
 
-#rs.login(username="mattmasody16@gmail.com", password="ilovecoke04", expiresIn=86400, by_sms=True)
-
 while True:
 
     # if test_mode:
