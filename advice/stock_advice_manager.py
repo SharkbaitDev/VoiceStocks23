@@ -1,12 +1,10 @@
 import difflib
-from yahoo_fin import stock_info as si
-import yfinance as yf
-import stock_individual_news
+from news import stock_individual_news
 
 STOCK_ADVICE_PHRASES = []
 
 def load_phrases():
-    with open("stock_individual_advice_phrases", "r") as f:
+    with open("advice/stock_individual_advice_phrases", "r") as f:
         for line in f:
             STOCK_ADVICE_PHRASES.append(
                 line.strip().replace("'", "").replace("[", "").replace("]", "").replace("-", ""))

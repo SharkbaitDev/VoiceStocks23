@@ -7,7 +7,19 @@ import speech_recognition as sr
 
 speaker = tts.init()
 speaker.setProperty('rate', 150)
-voices = speaker.setProperty('voice', "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0")
+voice_id = "com.apple.speech.synthesis.voice.samantha"
+speaker.setProperty('voice', voice_id)
+voices = speaker.getProperty('voices')
+#for voice in voices:
+#    print("id: " + voice.id)
+#    speaker.setProperty('voice', voice.id)
+#    speaker.say('The quick brown fox jumped over the lazy dog.')
+#    speaker.runAndWait()
+    # Karen
+    # Samantha
+    # Victoria MAYBE
+
+# voices = speaker.setProperty('voice', "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0")
 #for voice in voices:
 #    print("id: " + voice.id)
 #    speaker.setProperty('voice', voice.id)
@@ -15,11 +27,11 @@ voices = speaker.setProperty('voice', "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Spe
 #    speaker.say("Hello, I am robot")
 #speaker.runAndWait()
 
-
 def speak(msg):
     speaker.say(msg)
     print(msg)
     speaker.runAndWait()
+
 
 def get_audio():
     r = sr.Recognizer()

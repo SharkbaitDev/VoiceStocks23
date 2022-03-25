@@ -1,11 +1,8 @@
 import math
 import random
-import re
 
-import stock_manager
-import stock_voice
-import os
-import sys
+from util import stock_manager
+from voice import stock_voice
 import difflib
 
 PRICE_REQUEST_PHRASES_LIST = []
@@ -23,7 +20,7 @@ def find_stock_keyword(test_str, K):
 
 
 def load_phrases():
-    with open("stock_price_request_phrases", "r") as f:
+    with open("essentials/stock_price_request_phrases", "r") as f:
         for line in f:
             PRICE_REQUEST_PHRASES_LIST.append(
                 line.strip().replace("'", "").replace("[", "").replace("]", "").replace("-", ""))
@@ -31,7 +28,7 @@ def load_phrases():
 
 
 def load_ease_company_names():
-    with open("stock_price_request_ease_company_names", "r") as f:
+    with open("essentials/stock_price_request_ease_company_names", "r") as f:
         for line in f:
             COMPANY_NAMES.append(
                 line.strip().replace("'", "").replace("[", "").replace("]", "").replace("-", ""))

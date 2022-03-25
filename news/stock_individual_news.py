@@ -1,13 +1,13 @@
 import difflib
 
 import pandas as pd
-import yfinance
 from bs4 import BeautifulSoup
-import matplotlib.pyplot as plt
 from urllib.request import urlopen, Request
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import nltk
-import stock_voice
+
+from ai_brain import essential_answers
+from voice import stock_voice
 
 nltk.download('vader_lexicon')
 
@@ -15,7 +15,7 @@ STOCK_INDIVIDUAL_NEWS = []
 
 
 def load_phrases():
-    with open("stock_individual_news_phrases", "r") as f:
+    with open("news/stock_individual_news_phrases", "r") as f:
         for line in f:
             STOCK_INDIVIDUAL_NEWS.append(
                 line.strip().replace("'", "").replace("[", "").replace("]", "").replace("-", ""))
@@ -172,11 +172,12 @@ def get_news(ticker):
 
     answer = stock_voice.get_audio()
 
-    if answer.count("yes") > 0:
+
+    if essential_answers.check_text_for_answer(answer, "yes"):
         stock_voice.speak("Conducting sentiment analysis...")
         conduct_sentiment_analysis(tickers)
         return
-    elif answer.count("no")>0:
+    elif essential_answers.check_text_for_answer(answer, "no"):
         stock_voice.speak("Alright.")
         return
 

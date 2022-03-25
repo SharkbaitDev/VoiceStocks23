@@ -1,0 +1,18 @@
+okay:
+- okay
+- alright
+- all right
+- very well
+#sentiment-analysis-ask
+- Would you like me to conduct sentiment analysis on these stocks?
+- Would you like me to conduct sentiment analysis on each of these headlines?
+#stock_price_answer_integer
+- As of right now, {stock} is at {price} dollars.
+- The price of {stock} is currently {price} dollars.
+- Currently, {stock} is {price} dollars.
+- A share of {stock} is worth {price} dollars right now.
+#stock_price_answer_decimal
+- As of right now, {stock} is at {price} dollars and {cents} cents.
+- The price of {stock} is currently {price} dollars and {cents} cents.
+- Currently, {stock} is {price} dollars and {cents} cents.
+- A share of {stock} is worth {price} dollars and {cents} cents right now.
