@@ -1,7 +1,8 @@
-
+import random
 
 NO_ANSWER_LIST = []
 YES_ANSWER_LIST = []
+ACKNOWLEDGE_LIST = []
 
 def load_essential_answers():
     # LOAD NO PHRASES
@@ -14,8 +15,13 @@ def load_essential_answers():
         for line in f:
             YES_ANSWER_LIST.append(
                 line.strip().replace("'", "").replace("[", "").replace("]", "").replace("-", ""))
+    with open("ai_brain/human_answers/essential_answer_acknowledge", "r") as f:
+        for line in f:
+            ACKNOWLEDGE_LIST.append(
+                line.strip().replace("'", "").replace("[", "").replace("]", "").replace("-", ""))
 
 
+# Check the inputted voice audio for "yes" or "no"
 def check_text_for_answer(text, phrase_id):
     if phrase_id is "no":
         for phrase in NO_ANSWER_LIST:
@@ -31,3 +37,10 @@ def check_text_for_answer(text, phrase_id):
                 return False
     else:
         print("could not find phrase id. error 1")
+
+def random_no():
+    index = ACKNOWLEDGE_LIST.count()
+
+    rand = random.randint(index)
+
+    return ACKNOWLEDGE_LIST[rand]

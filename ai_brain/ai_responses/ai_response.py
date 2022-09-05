@@ -16,8 +16,6 @@ def load_essential_answers():
         str_data = fp.read()
     data = ruamel.yaml.load(str_data)
 
-    print(data['okay'])
-
 
 
 load_essential_answers()

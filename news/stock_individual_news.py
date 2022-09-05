@@ -176,6 +176,8 @@ def get_news(ticker):
     if essential_answers.check_text_for_answer(answer, "yes"):
         stock_voice.speak("Conducting sentiment analysis...")
         conduct_sentiment_analysis(tickers)
+
+        stock_voice.speak("Would you like me to go more in depth? ")
         return
     elif essential_answers.check_text_for_answer(answer, "no"):
         stock_voice.speak("Alright.")

@@ -70,7 +70,8 @@ while True:
                     break
             for phrase_movers in stock_dailymovers.DAILYMOVERS_REQUEST_LIST:
                 if similar(new_text, phrase_movers) > 0.75:
-                    stock_dailymovers.say_top_movers()
+                    # TODO: Stock daily movers
+                    print("Daily movers!")
                     break
             for phrase_advice in stock_advice_manager.STOCK_ADVICE_PHRASES:
                 if similar(new_text, phrase_advice) > 0.75:

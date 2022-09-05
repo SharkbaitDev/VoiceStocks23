@@ -90,4 +90,7 @@ def research(stock):
             pros.append("- Rated in top tech stock picks")
             continue
 
+        elif "Downfall" in str:
+            cons.append("")
+
 
