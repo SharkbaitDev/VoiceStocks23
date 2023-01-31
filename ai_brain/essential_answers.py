@@ -23,13 +23,13 @@ def load_essential_answers():
 
 # Check the inputted voice audio for "yes" or "no"
 def check_text_for_answer(text, phrase_id):
-    if phrase_id is "no":
+    if phrase_id == "no":
         for phrase in NO_ANSWER_LIST:
             if phrase is text.lower():
                 return True
             elif phrase not in text.lower():
                 return False
-    elif phrase_id is "yes":
+    elif phrase_id == "yes":
         for phrase in YES_ANSWER_LIST:
             if phrase is text.lower():
                 return True

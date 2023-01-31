@@ -54,8 +54,10 @@ while True:
         essential_answers.load_essential_answers()
         loaded = True
 
+    text = ""
     if sleep_mode:
         text = get_audio()
+        print(text)
     for wake in WAKE_LIST:
         if text.count(wake.lower()) > 0 or not sleep_mode:
             if sleep_mode:
